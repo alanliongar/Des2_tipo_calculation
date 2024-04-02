@@ -40,11 +40,27 @@ class MainActivity : AppCompatActivity() {
 
         if (percentuall != null && valorr != null && pessoass != null) {
             percentuall = percentuall / 100
-            val valor_conta = "%.1f".format(valorr / pessoass)
-            val valor_gorjeta = "%.1f".format((valorr / pessoass) * percentuall)
-            val valor_total = "%.1f".format((valorr / pessoass) + (valorr / pessoass) * percentuall)
 
-            resultado.text = "$valor_conta || $valor_gorjeta || $valor_total"
+            var valor_conta: String = ""
+            var valor_gorjeta: String = ""
+            var valor_total: String = ""
+            if (valorr / pessoass < 10) {
+                valor_conta = "0"+"%.2f".format(valorr / pessoass)
+            } else {
+                valor_conta = ""+"%.2f".format(valorr / pessoass)
+            }
+            if ((valorr / pessoass) * percentuall < 10) {
+                valor_gorjeta = "0"+"%.2f".format((valorr / pessoass) * percentuall)
+            } else {
+                valor_gorjeta = ""+"%.2f".format((valorr / pessoass) * percentuall)
+            }
+            if ((valorr / pessoass) + (valorr / pessoass) * percentuall < 10) {
+                valor_total = "0"+"%.2f".format((valorr / pessoass) + (valorr / pessoass) * percentuall)
+            } else {
+                valor_total = "%.2f".format((valorr / pessoass) + (valorr / pessoass) * percentuall)
+            }
+            resultado.text =
+                "R$ $valor_conta\n\nR$ $valor_gorjeta\n\nR$ $valor_total"
         } else {
             resultado.text = ""
         }
