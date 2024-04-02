@@ -55,14 +55,34 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
-        android:id="@+id/resultado"
+        android:id="@id/texto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="50sp"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:text="Valor da conta\n\nValor da gorjeta\n\nValor total"
+        android:gravity=""
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/resultado"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/percent_L"
-        tools:text="Hello World" />
+        />
+    <TextView
+        android:id="@+id/resultado"
+        android:gravity="right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/texto"
+        app:layout_constraintTop_toBottomOf="@id/percent_L"
+        tools:text="R$ 10.01\n\nR$ 05.01\n\nR$ 15.02" />
+
+
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
