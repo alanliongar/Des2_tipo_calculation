@@ -11,7 +11,7 @@
         android:id="@+id/valor_L"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@id/pessoas_L"
+        app:layout_constraintBottom_toTopOf="@id/vg_pessoas"
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -22,28 +22,59 @@
             android:inputType="numberDecimal" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/pessoas_L"
-        android:layout_width="match_parent"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@id/percent_L"
+        android:id="@+id/vg_pessoas"
         app:layout_constraintTop_toBottomOf="@id/valor_L"
-        tools:layout_editor_absoluteY="201dp">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/pessoas_E"
-            android:layout_width="match_parent"
+        app:layout_constraintBottom_toTopOf="@id/percent_L"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
+        <Button
+            android:id="@+id/button_M"
+            android:layout_width="55dp"
             android:layout_height="wrap_content"
-            android:hint="Qtd de pessoas"
-            android:inputType="numberDecimal" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:text="-"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tv_qtd"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_qtd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            tools:text="50"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/button_P"
+            app:layout_constraintStart_toEndOf="@id/button_M"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/button_P"
+            android:layout_width="55dp"
+            android:layout_height="wrap_content"
+            android:text="+"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_qtd"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+<!--    Inserir aqui no código, os botões que representam os percentuais e eliminar o edittext abaixo-->
+
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/percent_L"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@id/resultado"
-        app:layout_constraintTop_toBottomOf="@id/pessoas_L"
+        app:layout_constraintTop_toBottomOf="@id/vg_pessoas"
         tools:layout_editor_absoluteY="275dp">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -79,9 +110,6 @@
         app:layout_constraintStart_toEndOf="@+id/texto"
         app:layout_constraintTop_toBottomOf="@id/percent_L"
         tools:text="R$ 10.01\n\nR$ 05.01\n\nR$ 15.02" />
-
-
-
 
 
 
