@@ -15,7 +15,7 @@
         app:layout_constraintBottom_toTopOf="@id/valor_L"
         app:layout_constraintEnd_toEndOf="@id/valor_L"
         app:layout_constraintStart_toStartOf="@id/valor_L"
-        app:layout_constraintTop_toTopOf="" />
+        />
 
 
     <com.google.android.material.textfield.TextInputLayout
