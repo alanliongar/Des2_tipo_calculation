@@ -14,7 +14,10 @@
         android:layout_marginStart="150dp"
         android:layout_marginEnd="150dp"
         app:layout_constraintBottom_toTopOf="@id/vg_pessoas"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/valor_E"
@@ -33,6 +36,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/valor_L">
 
+        <TextView
+            android:id="@+id/tv_pessoas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_marginBottom="dp"
+            android:text="Pessoas"
+            app:layout_constraintBottom_toTopOf="@id/tv_qtd"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
         <Button
             android:id="@+id/button_M"
             android:layout_width="55dp"
@@ -41,7 +57,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/tv_qtd"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/tv_pessoas" />
 
         <TextView
             android:id="@+id/tv_qtd"
@@ -52,7 +68,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/button_P"
             app:layout_constraintStart_toEndOf="@id/button_M"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_pessoas"
             tools:text="50" />
 
         <Button
@@ -63,9 +79,21 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/tv_qtd"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/tv_pessoas" />
     </androidx.constraintlayout.widget.ConstraintLayout>
     <!--    Inserir aqui no código, os botões que representam os percentuais e eliminar o edittext abaixo-->
+
+    <TextView
+        android:id="@+id/tv_taxas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="Taxas"
+app:layout_constraintBottom_toTopOf="@id/vg_botoes_perc"
+        app:layout_constraintStart_toStartOf="@id/vg_botoes_perc"
+        app:layout_constraintEnd_toEndOf="@id/vg_botoes_perc"
+        />
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/vg_botoes_perc"
         android:layout_width="wrap_content"
@@ -110,6 +138,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="25%"
+            android:padding="0dp"
+            android:layout_margin="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/outros"
             app:layout_constraintStart_toStartOf="parent"
