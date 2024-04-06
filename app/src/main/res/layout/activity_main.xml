@@ -7,6 +7,17 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Valor da conta"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/valor_L"
+        app:layout_constraintEnd_toEndOf="@id/valor_L"
+        app:layout_constraintStart_toStartOf="@id/valor_L"
+        app:layout_constraintTop_toTopOf="" />
+
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/valor_L"
         android:layout_width="match_parent"
@@ -14,10 +25,9 @@
         android:layout_marginStart="150dp"
         android:layout_marginEnd="150dp"
         app:layout_constraintBottom_toTopOf="@id/vg_pessoas"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        >
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/valor_E"
@@ -31,6 +41,7 @@
         android:id="@+id/vg_pessoas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingBottom="25dp"
         app:layout_constraintBottom_toTopOf="@id/texto"
         app:layout_constraintEnd_toStartOf="@id/vg_botoes_perc"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,9 +51,10 @@
             android:id="@+id/tv_pessoas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="5dp"
             android:layout_marginBottom="dp"
+            android:padding="5dp"
             android:text="Pessoas"
+            android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@id/tv_qtd"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -89,10 +101,10 @@
         android:layout_height="wrap_content"
         android:padding="5dp"
         android:text="Taxas"
-app:layout_constraintBottom_toTopOf="@id/vg_botoes_perc"
-        app:layout_constraintStart_toStartOf="@id/vg_botoes_perc"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/vg_botoes_perc"
         app:layout_constraintEnd_toEndOf="@id/vg_botoes_perc"
-        />
+        app:layout_constraintStart_toStartOf="@id/vg_botoes_perc" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/vg_botoes_perc"
@@ -137,9 +149,9 @@ app:layout_constraintBottom_toTopOf="@id/vg_botoes_perc"
             android:id="@+id/vincinco"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="25%"
-            android:padding="0dp"
             android:layout_margin="0dp"
+            android:padding="0dp"
+            android:text="25%"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/outros"
             app:layout_constraintStart_toStartOf="parent"
