@@ -24,17 +24,22 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="150dp"
         android:layout_marginEnd="150dp"
+        app:hintEnabled="false"
         app:layout_constraintBottom_toTopOf="@id/vg_pessoas"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/NoOutlineTextInputLayout"
+        >
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/valor_E"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Valor"
-            android:inputType="numberDecimal" />
+            android:inputType="numberDecimal"
+            android:background="@drawable/edittext_underline"
+            />
     </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
