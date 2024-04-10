@@ -1,5 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Cores Básicas -->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Cor de Fundo -->
+    <color name="background">#E0F7FA</color> <!-- Azul bem clarinho -->
+
+    <!-- Cores Primárias -->
+    <color name="primary">#00ACC1</color> <!-- Ciano -->
+    <color name="primary_variant">#00838F</color> <!-- Variante mais escura para contrastes -->
+
+    <!-- Cores Secundárias -->
+    <color name="secondary">#FFAB40</color> <!-- Laranja -->
+    <color name="secondary_variant">#FF9100</color> <!-- Variante mais escura para contrastes -->
+
+    <!-- Cores de Texto -->
+    <color name="text">#004D40</color> <!-- Teal escuro -->
+
+    <!-- Cor de Acentuação -->
+    <color name="accent">#26A69A</color> <!-- Teal -->
+
+    <!-- Cores Adicionais (Opcionais para Estados Específicos) -->
+    <color name="error">#B00020</color> <!-- Para mensagens de erro -->
+    <color name="on_primary">#FFFFFF</color> <!-- Texto sobre a cor primária -->
+    <color name="on_secondary">#000000</color> <!-- Texto sobre a cor secundária -->
+    <color name="on_background">#000000</color> <!-- Texto sobre o fundo -->
+    <color name="on_error">#FFFFFF</color> <!-- Texto sobre a cor de erro -->
+
+    <!-- Cores para botões -->
+    <color name="button_text">#000000</color> <!-- Preto, para boa legibilidade -->
+    <color name="button_default">#FFAB40</color> <!-- Laranja, cor padrão dos botões -->
+    <color name="button_unselected">#00ACC1</color> <!-- Ciano, para botões não selecionados -->
+    <color name="button_selected">#26A69A</color> <!-- Teal, para o botão selecionado -->
 </resources>

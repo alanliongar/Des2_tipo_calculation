@@ -5,21 +5,40 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     tools:context=".MainActivity">
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cálculo de Gorjeta"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/valor_conta"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="45sp"
+        />
+
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Valor da conta"
+        android:textColor="@color/black"
         android:textStyle="bold"
+        android:id="@+id/valor_conta"
         app:layout_constraintBottom_toTopOf="@id/valor_L"
         app:layout_constraintEnd_toEndOf="@id/valor_L"
-        app:layout_constraintStart_toStartOf="@id/valor_L"
-        />
+        app:layout_constraintStart_toStartOf="@id/valor_L" />
 
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/valor_L"
+        style="@style/NoOutlineTextInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="150dp"
@@ -28,18 +47,16 @@
         app:layout_constraintBottom_toTopOf="@id/vg_pessoas"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        style="@style/NoOutlineTextInputLayout"
-        >
+        app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/valor_E"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/edittext_underline"
             android:hint="Valor"
             android:inputType="numberDecimal"
-            android:background="@drawable/edittext_underline"
-            />
+            android:textColor="@color/black" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -58,7 +75,8 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="0dp"
             android:padding="5dp"
-            android:text="Pessoas"
+            android:text="Quantidade\nde Pessoas"
+            android:textColor="@color/on_background"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@id/tv_qtd"
             app:layout_constraintEnd_toEndOf="parent"
@@ -70,7 +88,10 @@
             android:id="@+id/button_M"
             android:layout_width="55dp"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/secondary"
             android:text="-"
+            android:textColor="@color/on_background"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/tv_qtd"
             app:layout_constraintStart_toStartOf="parent"
@@ -82,6 +103,8 @@
             android:layout_height="wrap_content"
             android:padding="5dp"
             android:text="TextView"
+            android:textStyle="bold"
+            android:textColor="@color/on_background"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/button_P"
             app:layout_constraintStart_toEndOf="@id/button_M"
@@ -92,7 +115,10 @@
             android:id="@+id/button_P"
             android:layout_width="55dp"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/secondary"
             android:text="+"
+            android:textColor="@color/text"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/tv_qtd"
@@ -106,6 +132,7 @@
         android:layout_height="wrap_content"
         android:padding="5dp"
         android:text="Taxas"
+        android:textColor="@color/on_background"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/vg_botoes_perc"
         app:layout_constraintEnd_toEndOf="@id/vg_botoes_perc"
@@ -124,7 +151,10 @@
             android:id="@+id/dez"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/secondary"
             android:text="10%"
+            android:textColor="@color/text"
+            android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@id/vincinco"
             app:layout_constraintEnd_toStartOf="@id/quinze"
             app:layout_constraintStart_toStartOf="parent"
@@ -134,7 +164,10 @@
             android:id="@+id/quinze"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/secondary"
             android:text="15%"
+            android:textColor="@color/text"
+            android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@id/vincinco"
             app:layout_constraintEnd_toStartOf="@id/vinte"
             app:layout_constraintStart_toEndOf="@id/dez"
@@ -144,8 +177,11 @@
             android:id="@+id/vinte"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/secondary"
             android:text="20%"
-            app:layout_constraintBottom_toTopOf="@id/outros"
+            android:textColor="@color/text"
+            android:textStyle="bold"
+
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/quinze"
             app:layout_constraintTop_toTopOf="parent" />
@@ -155,22 +191,46 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="0dp"
+            android:backgroundTint="@color/secondary"
             android:padding="0dp"
             android:text="25%"
+            android:textColor="@color/text"
+            android:textStyle="bold"
+            tools:backgroundTint="@color/button_selected"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/outros"
+
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/dez" />
 
         <Button
             android:id="@+id/outros"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/secondary"
             android:text="Outra taxa"
+            android:textColor="@color/text"
+            android:textStyle="bold"
+            android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/vincinco"
-            app:layout_constraintTop_toBottomOf="@id/vinte" />
+            app:layout_constraintTop_toBottomOf="@id/vinte"
+
+
+            />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/customTaxa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Digite taxa %"
+            android:inputType="numberDecimal"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/outros"
+            app:layout_constraintEnd_toEndOf="@id/outros"
+            app:layout_constraintStart_toStartOf="@id/outros"
+            app:layout_constraintTop_toTopOf="@id/outros"
+            />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
@@ -183,6 +243,7 @@
         android:layout_height="wrap_content"
         android:gravity=""
         android:text="Valor da conta\n\nValor da gorjeta\n\nValor total"
+        android:textColor="@color/primary_variant"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -196,6 +257,7 @@
         android:layout_height="wrap_content"
         android:gravity="right"
         android:text="R$ 00,00\n\nR$ 00,00\n\nR$ 00,00"
+        android:textColor="@color/primary_variant"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

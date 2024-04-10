@@ -1,12 +1,16 @@
 package com.example.des2_tip_calculation
 
+import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.View
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.google.android.material.textfield.TextInputEditText
 
 class MainActivity : AppCompatActivity() {
@@ -20,6 +24,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var btn3: Button
     private lateinit var btn4: Button
     private lateinit var btn5: Button
+    private lateinit var cust: EditText
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -33,8 +38,9 @@ class MainActivity : AppCompatActivity() {
         btn3 = findViewById(R.id.vinte)
         btn4 = findViewById(R.id.vincinco)
         btn5 = findViewById(R.id.outros)
+        cust = findViewById(R.id.customTaxa)
 
-        val botoes = listOf(btn1,btn2,btn3,btn4,btn5)
+        val botoes = listOf(btn1, btn2, btn3, btn4, btn5)
         var perc: Float = 0.0f
         var qtdPessoas: Int = 1
         qtd_p.text = qtdPessoas.toString()
@@ -44,10 +50,25 @@ class MainActivity : AppCompatActivity() {
             override fun afterTextChanged(s: Editable?) {}
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                calculateAndDisplayResult(qtdPessoas, perc) //Essa função serve pra LITERALMENTE calcular e mostrar o result
+                calculateAndDisplayResult(
+                    qtdPessoas,
+                    perc
+                ) //Essa função serve pra LITERALMENTE calcular e mostrar o result
             }
         }
         valor.addTextChangedListener(textwater)//Quando o texto é digitado esse método é chamado.
+        cust.addTextChangedListener(object: TextWatcher{
+            override fun afterTextChanged (s: Editable?){
+                if (s.toString().isEmpty()){
+                    perc = 0.0f
+                }else{
+                    perc = s.toString().toFloat()/100
+                }
+                calculateAndDisplayResult(qtdPessoas,perc)
+            }
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+        })
         btnM.setOnClickListener {
             if (qtdPessoas > 1) {
                 qtdPessoas--
@@ -60,32 +81,42 @@ class MainActivity : AppCompatActivity() {
         btnP.setOnClickListener {
             qtdPessoas++
             qtd_p.text = qtdPessoas.toString()
-            calculateAndDisplayResult(qtdPessoas,perc)
+            calculateAndDisplayResult(qtdPessoas, perc)
+
         }
         btn1.setOnClickListener {
             perc = 0.10f
-            pintar(btn1,botoes)
-            calculateAndDisplayResult(qtdPessoas,perc)
+            pintar(this, btn1, botoes)
+            calculateAndDisplayResult(qtdPessoas, perc)
+            btn5.visibility = View.VISIBLE
+            cust.visibility = View.GONE
+
         }
         btn2.setOnClickListener {
             perc = 0.15f
-            pintar(btn2,botoes)
-            calculateAndDisplayResult(qtdPessoas,perc)
+            pintar(this, btn2, botoes)
+            calculateAndDisplayResult(qtdPessoas, perc)
+            btn5.visibility = View.VISIBLE
+            cust.visibility = View.GONE
         }
         btn3.setOnClickListener {
             perc = 0.20f
-            pintar(btn3,botoes)
-            calculateAndDisplayResult(qtdPessoas,perc)
+            pintar(this, btn3, botoes)
+            calculateAndDisplayResult(qtdPessoas, perc)
+            btn5.visibility = View.VISIBLE
+            cust.visibility = View.GONE
         }
         btn4.setOnClickListener {
             perc = 0.25f
-            pintar(btn4,botoes)
-            calculateAndDisplayResult(qtdPessoas,perc)
+            pintar(this, btn4, botoes)
+            calculateAndDisplayResult(qtdPessoas, perc)
+            btn5.visibility = View.VISIBLE
+            cust.visibility = View.GONE
         }
         btn5.setOnClickListener {
-            perc = 0.30f
-            pintar(btn5,botoes)
-            calculateAndDisplayResult(qtdPessoas,perc)
+            pintar(this, btn5, botoes)
+            btn5.visibility = View.GONE
+            cust.visibility = View.VISIBLE
         }
     }
 
@@ -122,17 +153,13 @@ class MainActivity : AppCompatActivity() {
     }
 }
 
-private fun pintar(btnSel:Button, todos:List<Button>){
+private fun pintar(context: Context, btnSel: Button, todos: List<Button>) {
 
-todos.forEach{botao ->
-    if (botao == btnSel){
-        botao.setBackgroundColor(Color.GREEN)
-    }else{
-        botao.setBackgroundColor(Color.MAGENTA)
+    todos.forEach { botao ->
+        if (botao == btnSel) {
+            botao.setBackgroundColor(ContextCompat.getColor(context, R.color.button_selected))
+        } else {
+            botao.setBackgroundColor(ContextCompat.getColor(context, R.color.button_default))
+        }
     }
-}
-
-
-
-
 }
